@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 1. Define your fonts with the *exact* font-family name */
+@font-face {
+  font-family: "Sora"; /* This is the key name */
+  src: url("/fonts/Sora-ExtraBold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PlayFair"; /* This is the key name */
+  src: url("/fonts/PlayfairDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 2. Map the font-family names to CSS variables using the correct format */
+@theme {
+  /* Use the *unquoted* name from the @font-face as the value*/
+  --font-Lato: Lato;
+  --font-Sora: Sora;
+  --font-PlayFair: PlayFair;
+  /* Your colors are fine */
+  --color-Card1: #e5d9f6;
+  --color-Card2: #ffd2f3;
+  --color-Card3: #fcdca6;
+  --color-Bg: #f9f4eb;
+  --color-Bg2: #1e1e1e;
+}
+
+/* 3. Global application (Optional, but ensures the font is used if no Tailwind class is present) */
+body {
+  background-color: #f9f4eb;
+  overflow-x: hidden;
+  /* Use the *exact* name from the @font-face rule. Adding a fallback is good practice. */
+}
+p {
+  font-family: Lato "serif";
+}
+
+span {
+  text-transform: uppercase;
+  /* Note: font-weight: 500 will only work if you have a font file for 500. 
+     Your @font-face only defined 800. If you only have one file, stick to 800. */
+}
+@keyframes floating {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -55%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+#hero-card1 {
+  animation-delay: 0s;
+}
+
+#hero-card2 {
+  animation-delay: 0.25s;
+}
+
+#hero-card3 {
+  animation-delay: 0.5s;
 }
