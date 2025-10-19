@@ -21,11 +21,11 @@ export default function AboutSec() {
               </p>
             </div>
             <div className="flex gap-4 items-center mt-5  lg:mt-3">
-              <div className="bg-white size-9 rounded-full relative">
+              <div className="bg-Card3 size-9 rounded-full relative">
                 {" "}
                 <ArrowLeft className="text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />{" "}
               </div>
-              <div className="bg-white size-9 rounded-full relative">
+              <div className="bg-Card3 size-9 rounded-full relative">
                 <ArrowRight className="text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
               </div>
             </div>

@@ -310,7 +310,7 @@ export default function ServiceSec() {
       </section>
 
       <div className="w-full relative z-3 flex justify-center items-center">
-        <Button title="My Approach" color="#f9f4eb" bgColor="#1e1e1e" />
+        <Button title="My Approach" />
       </div>
     </>
   );

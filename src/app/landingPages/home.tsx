@@ -180,7 +180,7 @@ export default function Hero() {
               trigger: heroRef.current,
               start: "bottom 95%",
               end: "bottom 65%", // Runs until section scrolls out
-              scrub: true,
+              scrub: 1,
             },
           });
 
