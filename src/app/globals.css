@@ -45,11 +45,6 @@ p {
   font-family: Lato "serif";
 }
 
-span {
-  text-transform: uppercase;
-  /* Note: font-weight: 500 will only work if you have a font file for 500. 
-     Your @font-face only defined 800. If you only have one file, stick to 800. */
-}
 @keyframes floating {
   0% {
     transform: translate(-50%, -50%);
@@ -72,4 +67,8 @@ span {
 
 #hero-card3 {
   animation-delay: 0.5s;
+}
+/* In global.css */
+.cursor-none {
+  cursor: none;
 }
