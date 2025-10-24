@@ -81,7 +81,7 @@ export const RealWorkData: Work[] = [
       {
         title: "Starseed",
         subtitle: "A modern school portal website for education management",
-        image: "/images/starseed.png",
+        image: "/images/star-seed.png",
         link: "/case-study/starseed",
       },
       {
@@ -113,7 +113,7 @@ export const RealWorkData: Work[] = [
       {
         title: "Snubbz",
         subtitle: "Ideal crocs for everyone — stylish and comfy",
-        image: "/images/snubbz.png",
+        image: "/images/snubbz.jpg",
         link: "/case-study/snubbz",
       },
       {
@@ -125,13 +125,13 @@ export const RealWorkData: Work[] = [
       {
         title: "iPhone 15",
         subtitle: "Recreation of the official Apple iPhone 15 website",
-        image: "/images/iphone15.png",
+        image: "/images/iphone.jpeg",
         link: "/case-study/iphone15",
       },
       {
         title: "Studio Ghibli",
         subtitle: "A fan-made website for Studio Ghibli animations",
-        image: "/images/studio-ghibli.png",
+        image: "/images/studio-ghbili.png",
         link: "/case-study/studio-ghibli",
       },
       {
@@ -149,7 +149,7 @@ export const RealWorkData: Work[] = [
       {
         title: "Spylt",
         subtitle: "A recreated web experience inspired by the Spylt brand",
-        image: "/images/spylt.png",
+        image: "/images/spylt.jpg",
         link: "/case-study/spylt",
       },
     ],
