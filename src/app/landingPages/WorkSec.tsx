@@ -153,7 +153,6 @@ export default function WorkSec(): JSX.Element {
       <div
         id="custom-cursor"
         className="pointer-events-none fixed top-0 left-0 z-50 opacity-0 transition-opacity duration-200"
-        style={{ cursor: "none" }}
       >
         <div className="bg-Card3 size-10 rounded-full relative px-3 py-2">
           <CornerDownRight className="text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -166,6 +165,7 @@ export default function WorkSec(): JSX.Element {
           return (
             <div
               key={i}
+              style={{ cursor: "none" }}
               className="row flex flex-col lg:flex-row gap-4 flex-1 w-full "
             >
               {rowItems.map((item) => (

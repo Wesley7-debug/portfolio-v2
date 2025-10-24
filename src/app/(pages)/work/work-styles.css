@@ -1,0 +1,148 @@
+.folders {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.row {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.folder {
+  position: relative;
+  flex: 1;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.row:nth-child(2) .folder:nth-child(1) {
+  flex: 2;
+}
+.row:nth-child(2) .folder:nth-child(2) {
+  flex: 3;
+}
+
+.folder-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25rem;
+  height: 100%;
+  pointer-events: none;
+}
+.folderimg {
+  position: absolute;
+  top: 50%;
+  width: 15rem;
+  height: 12rem;
+}
+.folderimg:nth-child(1) {
+  left: 10%;
+  transform-origin: top left;
+}
+.folderimg:nth-child(2) {
+  left: 50%;
+  transform-origin: center;
+}
+.folderimg:nth-child(3) {
+  left: 80%;
+  transform-origin: top right;
+}
+.folder-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+.folder-index {
+  position: relative;
+  width: 40%;
+  padding: 0.75rem;
+}
+
+.folder-index::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 99%;
+  height: 101%;
+  aspect-ratio: 1;
+  clip-path: polygon(0 0, 25% 0, 100% 100%, 0 100%);
+}
+.folder-name {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 0 0.25rem;
+  padding-left: 2rem;
+}
+.folder-index,
+.folder-index::after,
+.folder-name {
+  transition: background-color 250ms ease;
+}
+
+.folder.variant-1 .folder-index,
+.folder.variant-1 .folder-index::after,
+.folder.variant-1 .folder-name {
+  background-color: var(--color-Card1);
+}
+
+.folder.variant-2 .folder-index,
+.folder.variant-2 .folder-index::after,
+.folder.variant-2 .folder-name {
+  background-color: var(--color-Card2);
+}
+
+.folder.variant-3 .folder-index,
+.folder.variant-3 .folder-index::after,
+.folder.variant-3 .folder-name {
+  background-color: var(--color-Card3);
+}
+.folder.disabled .folder-index,
+.folder.disabled .folder-index::after,
+.folder.disabled .folder-name .folder.disabled .folder-preview {
+  opacity: 0.7;
+  pointer-events: none; /* prevent interaction */
+  transition: opacity 0.3s ease;
+}
+
+.folder.disabled p,
+.folder.disabled h1 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.row:nth-child(1) {
+  bottom: -13rem;
+}
+.row:nth-child(2) {
+  bottom: -7.5rem;
+}
+.row:nth-child(3) {
+  bottom: -2rem;
+}
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .row {
+    flex-direction: column;
+    bottom: 0 !important;
+  }
+  .folder {
+    margin-bottom: -0.2rem;
+  }
+  .folder-preview {
+    display: none;
+  }
+  .folder-name {
+    padding: 0 0.5rem 0.5rem;
+  }
+}

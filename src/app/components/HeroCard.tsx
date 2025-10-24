@@ -16,7 +16,7 @@ export default function HeroCard({
   return (
     <div
       id={id}
-      className={`card flex-1 text-[0.5rem] rounded-[0.5rem] lg:w-[50px] lg:h-[180px] uppercase aspect-[3/4] p-3 relative ${bgColor} flex font-Lato flex-col justify-between`}
+      className={`card flex-1 text-[0.5rem] rounded-[0.5rem] lsg:w-[50px] lg:h-[180px] uppercase aspect-[3/4] p-3 relative ${bgColor} flex font-Lato flex-col justify-between`}
     >
       <div className="card-title w-full flex justify-between">
         <span>{title}</span>
