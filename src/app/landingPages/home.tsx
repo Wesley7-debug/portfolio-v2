@@ -134,8 +134,8 @@ export default function Hero() {
                   let rotation = 0;
                   if (index === 0) {
                     x = gsap.utils.interpolate(
-                      "0%",
-                      "90%",
+                      0,
+                      90,
                       smoothStop(cardProgress)
                     );
                     rotation = gsap.utils.interpolate(
