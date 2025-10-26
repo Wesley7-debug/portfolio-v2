@@ -205,7 +205,7 @@ export default function Work() {
 
   return (
     <>
-      <section className="folders w-full h-screen overflow-hidden bg-Bg relative flex flex-col lg:flex-row justify-end">
+      <section className="folders w-full h-screen overflow-hidden bg-Bg relative flex flex-col pb-10 lg:flex-row justify-end">
         {Array.from({ length: Math.ceil(RealWorkData.length / 2) }).map(
           (_, i) => {
             const startIndex = i * 2;
