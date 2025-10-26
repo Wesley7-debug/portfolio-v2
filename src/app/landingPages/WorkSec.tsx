@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import gsap from "gsap";
 import { CornerDownRight } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import View from "../components/View";
 
 export default function WorkSec(): JSX.Element {
   gsap.registerPlugin(ScrollTrigger);
@@ -84,7 +85,7 @@ export default function WorkSec(): JSX.Element {
 
       ScrollTrigger.create({
         trigger: row,
-        start: "top 70%",
+        start: "top 85%",
         onEnter: () => {
           gsap.to(workItem, {
             y: 0,
@@ -143,12 +144,14 @@ export default function WorkSec(): JSX.Element {
   }, []);
 
   return (
-    <section className="w-screen h-full overflow-x-hidden relative mt-50">
+    <section className="w-screen h-full overflow-hidden relative mt-50">
       <div className="about-header relative w-full h-[200px] text-wrap text-center content-center px-4 lg:px-25 py-2 mb-5 lg:text-7xl text-4xl">
-        <h1 className=" font-Sora">
-          Europe most aspiring <br />
-          <span className=" font-PlayFair ml-1">Featured Works</span>
-        </h1>
+        <View>
+          <h1 className=" font-Sora">
+            Europe most aspiring <br />
+            <span className=" font-PlayFair ml-1">Featured Works</span>
+          </h1>
+        </View>
       </div>
       <div
         id="custom-cursor"
@@ -178,10 +181,12 @@ export default function WorkSec(): JSX.Element {
                       height={600}
                       className="w-full h-auto object-cover aspect-[5/3] rounded-xl overflow-hidden"
                     />
+
                     <h2 className="  w-fit text-[1.2rem] font-Sora text-Bg2 relative inline-block ">
                       {item.title} | {item.subtitle}
                       <span className="underline absolute left-0 bottom-0 w-0 h-[1px] bg-black pointer-none: transition-none"></span>
                     </h2>
+
                     <h3 className="text-[1rem] font-Lato text-Bg2 ">
                       {item.type} - <span>{item.button}</span>
                     </h3>

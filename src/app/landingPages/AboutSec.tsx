@@ -1,7 +1,7 @@
 import { ArrowBigLeft, ArrowLeft, ArrowRight } from "lucide-react";
 import React from "react";
 import Button from "../components/Button";
-
+import View from "../components/View";
 export default function AboutSec() {
   return (
     <>
@@ -31,9 +31,13 @@ export default function AboutSec() {
             </div>
           </div>
           <div className=" mt-42 lg:mt-0 px-4 lg:absolute lg:top-[42%] lg:left-1/2 lg:-translate-x-1/2 lg:ml-7 lg:-translate-y-1/2 ">
-            <h2 className=" text-4xl lg:text-6xl font-semibold lg:w-[20ch] w-full min-w-[90%] ">
-              Crafting premium <br /> brands for startups that make people smile
-            </h2>
+            <View delay={0.3}>
+              <h2 className=" text-4xl lg:text-6xl font-semibold lg:w-[20ch] w-full min-w-[90%] ">
+                Crafting premium <br /> brands for startups that make people
+                smile
+              </h2>
+            </View>
+
             <div className="lg:mt-8 mt-15  flex items-center">
               <Button title="About me" />
             </div>

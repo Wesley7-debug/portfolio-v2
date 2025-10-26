@@ -89,16 +89,18 @@ export default function Cta() {
   }, []);
 
   return (
-    <section className="w-screen min-h-screen h-[120vh] bg-Bg overflow-hidden relative  mt-30 lg:mt-0 flex justify-center items-center">
+    <section className="w-screen min-h-screen h-[120vh]  overflow-hidden relative  mt-15 lg:mt-0 flex justify-center items-center">
       <div className="w-full justify-center items-center px-4 h-full flex flex-col lg:flex-row gap-8 mx-auto my-auto">
         {/* === Box 1 === */}
         <div
           ref={containerRef1}
           className="lg:flex-1 lg:w-[400px] w-full  h-[400px] bg-Bg2 rounded-2xl relative flex flex-col px-2 py-8 lg:gap-2"
         >
-          <div className="text-white text-2xl px-8">
-            <h2 className="font-Sora">You feel it too?</h2>
-            <h2 className="font-PlayFair">Let's talk. No strings attached.</h2>
+          <div className=" text-2xl px-8">
+            <h2 className="font-Sora text-Bg">You feel it too?</h2>
+            <h2 className="font-PlayFair text-Bg">
+              Let's talk. No strings attached.
+            </h2>
           </div>
 
           {/* Hover area */}

@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 import HeroCard from "../components/HeroCard";
+import View from "../components/View";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -283,6 +285,7 @@ export default function Hero() {
         <div className="lg:text-[0.7rem] text-[0.75rem] bg-black text-white rounded-sm px-2 py-1 uppercase w-fit text-nowrap">
           3d software developer
         </div>
+
         <p className=" lg:w-[40ch] w-[30ch] text-[1.2rem] lg:text-[1.5rem]  font-semibold leading-[clamp(1.4rem, 2.5vw, 1.75rem)]  mt-2">
           i craft fast, expressive and meaningful websites for creators and
           businesses that care about quality always chasing better with every

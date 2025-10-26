@@ -39,8 +39,16 @@
 body {
   background-color: #f9f4eb;
   overflow-x: hidden;
+  overflow-y: scroll; /* allows vertical scrolling */
+  scrollbar-width: none; /* hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* hides scrollbar in IE and Edge */
   /* Use the *exact* name from the @font-face rule. Adding a fallback is good practice. */
 }
+
+html::-webkit-scrollbar {
+  display: none; /* hides scrollbar in Chrome, Safari, Opera */
+}
+
 p {
   font-family: Lato "serif";
 }

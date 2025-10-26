@@ -205,61 +205,59 @@ export default function Work() {
 
   return (
     <>
-      <section className="folders w-full h-screen overflow-hidden bg-Bg relative">
-        <div className="w-full  absolute bottom-20  ">
-          {Array.from({ length: Math.ceil(RealWorkData.length / 2) }).map(
-            (_, i) => {
-              const startIndex = i * 2;
-              const rowItems = RealWorkData.slice(startIndex, startIndex + 2);
+      <section className="folders w-full h-screen overflow-hidden bg-Bg relative flex flex-col lg:flex-row justify-end">
+        {Array.from({ length: Math.ceil(RealWorkData.length / 2) }).map(
+          (_, i) => {
+            const startIndex = i * 2;
+            const rowItems = RealWorkData.slice(startIndex, startIndex + 2);
 
-              // Optional: consistent color per row
+            // Optional: consistent color per row
 
-              return (
-                <div key={i} className="row">
-                  {rowItems.map((itm, idx) => {
-                    const variantClass =
-                      variantClasses[globalIndex % variantClasses.length];
+            return (
+              <div key={i} className="row">
+                {rowItems.map((itm, idx) => {
+                  const variantClass =
+                    variantClasses[globalIndex % variantClasses.length];
 
-                    const folder = (
-                      <div
-                        className={`folder ${variantClass}`}
-                        onClick={() => handleOpenModal(itm, variantClass)}
-                      >
-                        <div className="folder-preview">
-                          {itm.image.map((img) => (
-                            <div className="folderimg" key={img}>
-                              <Image
-                                src={img}
-                                alt={itm.title ?? ""}
-                                width={800}
-                                height={600}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          ))}
+                  const folder = (
+                    <div
+                      className={`folder ${variantClass}`}
+                      onClick={() => handleOpenModal(itm, variantClass)}
+                    >
+                      <div className="folder-preview">
+                        {itm.image.map((img) => (
+                          <div className="folderimg" key={img}>
+                            <Image
+                              src={img}
+                              alt={itm.title ?? ""}
+                              width={800}
+                              height={600}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="folder-wrapper relative w-full h-full will-change-transform">
+                        <div className="folder-index font-Lato transition-colors text-sm relative w-[40%] p-3 after:absolute after:top-0 after:left-[99%] after:h-[101%] after:aspect-[1] after:[clippath(0,0,25% 0%, 100% 100%,0 100%)] after:content-['']">
+                          <p>{itm.number}</p>
                         </div>
-
-                        <div className="folder-wrapper relative w-full h-full will-change-transform">
-                          <div className="folder-index font-Lato transition-colors text-sm relative w-[40%] p-3 after:absolute after:top-0 after:left-[99%] after:h-[101%] after:aspect-[1] after:[clippath(0,0,25% 0%, 100% 100%,0 100%)] after:content-['']">
-                            <p>{itm.number}</p>
-                          </div>
-                          <div className="folder-name w-full h-full flex items-start px-1 pl-8 transition-[background-color] duration-300">
-                            <h1 className="text-4xl font-Lato transition-colors font-semibold">
-                              {itm.title}
-                            </h1>
-                          </div>
+                        <div className="folder-name w-full h-full flex items-start px-1 pl-8 transition-[background-color] duration-300">
+                          <h1 className="text-4xl font-Lato transition-colors font-semibold">
+                            {itm.title}
+                          </h1>
                         </div>
                       </div>
-                    );
+                    </div>
+                  );
 
-                    globalIndex++; // Increment after each folder
-                    return <React.Fragment key={idx}>{folder}</React.Fragment>;
-                  })}
-                </div>
-              );
-            }
-          )}
-        </div>
+                  globalIndex++; // Increment after each folder
+                  return <React.Fragment key={idx}>{folder}</React.Fragment>;
+                })}
+              </div>
+            );
+          }
+        )}
       </section>
       {selectedWork && (
         <WorkModal
