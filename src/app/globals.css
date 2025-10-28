@@ -82,6 +82,16 @@ p {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
   will-change: clip-path;
 }
+/* Hide scrollbars but allow scrolling */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
 /* #hero-card1,
 #hero-card2,
 #hero-card {
