@@ -144,7 +144,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <section className="w-screen max-h-screen h-full bg-Bg relative overflow-hidden font-Lato sm:pt-12 pt-7  flex flex-col justify-betweaen">
+    <section className="w-screen max-h-screen z-3 h-full bg-Bg relative overflow-hidden font-Lato sm:pt-12 pt-7  flex flex-col justify-betweaen">
       {/* ====== Top section ====== */}
       <div className="w-full flex flex-col md:flex-row justify-between px-6 md:px-12 gap-12 md:gap-20 whitespace-nowrap">
         {/* ---- Explore ---- */}

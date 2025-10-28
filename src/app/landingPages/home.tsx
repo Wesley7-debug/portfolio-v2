@@ -135,11 +135,7 @@ export default function Hero() {
                   let x = 0;
                   let rotation = 0;
                   if (index === 0) {
-                    x = gsap.utils.interpolate(
-                      0,
-                      90,
-                      smoothStop(cardProgress)
-                    );
+                    x = gsap.utils.interpolate(0, 90, smoothStop(cardProgress));
                     rotation = gsap.utils.interpolate(
                       0,
                       -15,
@@ -249,7 +245,7 @@ export default function Hero() {
         </div>
       </div>
       {/* Heading */}
-      <div className="md:mt-15 mt-8  text-[3.5rem] lg:text-[9rem] md:leading-15  leading-12 font-Sora uppercase text-start lg:text-center flex flex-col lg:flex-row lg:justify-center ">
+      <div className="md:mt-15 mt-8  text-[3.5rem] lg:text-[9rem] md:text-[7rem] md:leading-15  leading-12 font-Sora uppercase text-start lg:text-center flex flex-col lg:flex-row lg:justify-center ">
         <h1>CHASING BETTER</h1>
       </div>
 

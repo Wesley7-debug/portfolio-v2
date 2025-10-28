@@ -19,7 +19,7 @@ export default function ServicesCard({
 }: ServiceCardProp) {
   return (
     <>
-      <div id={id} className="card hidden lg:block">
+      <div id={id} className="card ">
         <div className="card-wrapper">
           <div
             className="flip-card-inner rounded-2xl "
@@ -52,7 +52,7 @@ export default function ServicesCard({
                   </p>
                 ))}
               </div>
-              <div className="card-title w-full flex justify-between">
+              <div className="card-title w-full flex justify-between text-[0.75rem] font-Lato">
                 <span>{title}</span>
                 <span>{number}</span>
               </div>

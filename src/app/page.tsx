@@ -6,6 +6,7 @@ import WorkSec from "./landingPages/WorkSec";
 import Cta from "./components/Cta";
 import Footer from "./components/Footer";
 import LogoSec from "./landingPages/LogoSec";
+import Preloader from "./landingPages/Preloader";
 export default function page() {
   return (
     <>

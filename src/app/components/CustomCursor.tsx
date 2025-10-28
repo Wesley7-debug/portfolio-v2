@@ -101,7 +101,7 @@ export default function CustomCursor() {
           ref={(el) => {
             if (el) circlesRef.current[index] = el;
           }}
-          className="fixed rounded-full pointer-events-none z-50 transition-transform bg-[#d9d3c4]"
+          className="fixed rounded-full pointer-events-none z-[100000] transition-transform bg-[#d9d3c4]"
           style={{
             width: `${size}px`,
             height: `${size}px`,

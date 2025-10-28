@@ -44,7 +44,9 @@
   flex: 1;
 
   position: relative;
-  aspect-ratio: 4/5;
+  /* aspect-ratio: 4/5; */
+  width: 380px;
+  height: 350px;
   perspective: 1000px;
 }
 .card-container .card .card-wrapper {
@@ -140,4 +142,41 @@
 }
 .card-container .card {
   opacity: 0;
+}
+@media (max-width: 800px) {
+  .cards {
+    position: relative;
+    width: 100vw;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 200vh;
+    display: flex;
+  }
+  .card-container .card {
+    opacity: 1;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+  }
+  .card-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .flip-card-back {
+    transform: rotateY(0deg);
+  }
+  #card-1 {
+    transform: translate(0);
+    z-index: 2;
+  }
+  #card-2 {
+    transform: translate(0);
+    z-index: 2;
+  }
+  #card-3 {
+    transform: translate(0);
+    z-index: 2;
+  }
 }

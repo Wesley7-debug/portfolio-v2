@@ -1,10 +1,12 @@
 "use client";
 
 import { CornerDownRight } from "lucide-react";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
+import LetsWorkModal from "./LetsWorkModal";
 
 export default function Cta() {
+  const [isLetsWorkOpen, setIsLetsWorkOpen] = useState<boolean>(false);
   // First box refs
   const containerRef1 = useRef<HTMLDivElement>(null);
   const underLineRef1 = useRef<HTMLSpanElement>(null);
@@ -89,70 +91,81 @@ export default function Cta() {
   }, []);
 
   return (
-    <section className="w-screen min-h-screen h-[120vh]  overflow-hidden relative  mt-15 lg:mt-0 flex justify-center items-center">
-      <div className="w-full justify-center items-center px-4 h-full flex flex-col lg:flex-row gap-8 mx-auto my-auto">
-        {/* === Box 1 === */}
-        <div
-          ref={containerRef1}
-          className="lg:flex-1 lg:w-[400px] w-full  h-[400px] bg-Bg2 rounded-2xl relative flex flex-col px-2 py-8 lg:gap-2"
-        >
-          <div className=" text-2xl px-8">
-            <h2 className="font-Sora text-Bg">You feel it too?</h2>
-            <h2 className="font-PlayFair text-Bg">
-              Let's talk. No strings attached.
-            </h2>
+    <>
+      <section className="w-screen min-h-screen h-[120vh]  overflow-hidden relative  mt-15 lg:mt-0 flex justify-center items-center">
+        <div className="w-full justify-center items-center px-4 h-full flex flex-col lg:flex-row gap-8 mx-auto my-auto">
+          {/* === Box 1 === */}
+          <div
+            ref={containerRef1}
+            className="lg:flex-1 lg:w-[400px] w-full  h-[400px] bg-Bg2 rounded-2xl relative flex flex-col px-2 py-8 lg:gap-2"
+          >
+            <div className=" text-2xl px-8">
+              <h2 className="font-Sora text-Bg">You feel it too?</h2>
+              <h2 className="font-PlayFair text-Bg">
+                Let's talk. No strings attached.
+              </h2>
+            </div>
+
+            {/* Hover area */}
+            <div className="absolute bottom-8 text-white font-extrabold">
+              <div className="relative inline-flex items-center gap-3 cursor-pointer">
+                <CornerDownRight
+                  ref={arrowRef1}
+                  className="text-white size-7 lg:size-13"
+                />
+                <h1
+                  onClick={() => {
+                    setIsLetsWorkOpen((prev) => !prev);
+                  }}
+                  ref={textRef1}
+                  className="font-Lato text-4xl  lg:text-6xl relative"
+                >
+                  Let's Work
+                  <span
+                    ref={underLineRef1}
+                    className="absolute left-0 bottom-[-2px] h-[2px] w-0 bg-white block"
+                  ></span>
+                </h1>
+              </div>
+            </div>
           </div>
 
-          {/* Hover area */}
-          <div className="absolute bottom-8 text-white font-extrabold">
-            <div className="relative inline-flex items-center gap-3 cursor-pointer">
-              <CornerDownRight
-                ref={arrowRef1}
-                className="text-white size-7 lg:size-13"
-              />
-              <h1
-                ref={textRef1}
-                className="font-Lato text-4xl  lg:text-6xl relative"
-              >
-                Let's Work
-                <span
-                  ref={underLineRef1}
-                  className="absolute left-0 bottom-[-2px] h-[2px] w-0 bg-white block"
-                ></span>
-              </h1>
+          {/* === Box 2 === */}
+          <div
+            ref={containerRef2}
+            className=" lg:flex-1 bg-Card2 w-full lg:w-[400px] relative lg:h-[400px] h-[350px] rounded-2xl px-2 pt-6 text-black flex flex-col justify-between "
+          >
+            <div className="text-2xl px-8">
+              <h2 className="font-Sora">Offer for developers!</h2>
+              <h2 className="font-PlayFair">
+                Get cool animated UI components that make your design beautiful.
+              </h2>
+            </div>
+            {/* Hover area */}
+            <div className="absolute bottom-8 font-extrabold">
+              <div className="relative inline-flex items-center gap-3 cursor-pointer">
+                <CornerDownRight
+                  ref={arrowRef2}
+                  className=" size-7 lg:size-13"
+                />
+                <h1
+                  ref={textRef2}
+                  className="font-Lato text-4xl  lg:text-7xl relative text-wrap"
+                >
+                  Component <br /> Library
+                  <span
+                    ref={underLineRef2}
+                    className="absolute left-0 bottom-[-2px] h-[2px] w-0 bg-black block"
+                  ></span>
+                </h1>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* === Box 2 === */}
-        <div
-          ref={containerRef2}
-          className=" lg:flex-1 bg-Card2 w-full lg:w-[400px] relative lg:h-[400px] h-[350px] rounded-2xl px-2 pt-6 text-black flex flex-col justify-between "
-        >
-          <div className="text-2xl px-8">
-            <h2 className="font-Sora">Offer for developers!</h2>
-            <h2 className="font-PlayFair">
-              Get cool animated UI components that make your design beautiful.
-            </h2>
-          </div>
-          {/* Hover area */}
-          <div className="absolute bottom-8 font-extrabold">
-            <div className="relative inline-flex items-center gap-3 cursor-pointer">
-              <CornerDownRight ref={arrowRef2} className=" size-7 lg:size-13" />
-              <h1
-                ref={textRef2}
-                className="font-Lato text-4xl  lg:text-7xl relative text-wrap"
-              >
-                Component <br /> Library
-                <span
-                  ref={underLineRef2}
-                  className="absolute left-0 bottom-[-2px] h-[2px] w-0 bg-black block"
-                ></span>
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+      {isLetsWorkOpen && (
+        <LetsWorkModal onClose={() => setIsLetsWorkOpen(false)} />
+      )}
+    </>
   );
 }
