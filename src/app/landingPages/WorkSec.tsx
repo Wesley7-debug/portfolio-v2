@@ -144,62 +144,66 @@ export default function WorkSec(): JSX.Element {
   }, []);
 
   return (
-    <section className="w-screen h-full overflow-hidden relative mt-50">
-      <div className="about-header relative w-full h-[200px] text-wrap text-center content-center px-4 lg:px-25 py-2 mb-5 lg:text-7xl text-4xl">
-        <View>
-          <h1 className=" font-Sora">
-            Europe most aspiring <br />
-            <span className=" font-PlayFair ml-1">Featured Works</span>
-          </h1>
-        </View>
-      </div>
-      <div
-        id="custom-cursor"
-        className="pointer-events-none fixed top-0 left-0 z-50 opacity-0 transition-opacity duration-200"
-      >
-        <div className="bg-Card3 size-10 rounded-full relative px-3 py-2">
-          <CornerDownRight className="text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+    <React.Fragment>
+      <section className="w-screen h-full overflow-hidden relative mt-50">
+        <div className="about-header relative w-full h-[200px] text-wrap text-center content-center px-4 lg:px-25 py-2 mb-5 lg:text-7xl text-4xl">
+          <View>
+            <h1 className=" font-Sora">
+              Europe most aspiring <br />
+              <span className=" font-PlayFair ml-1">Featured Works</span>
+            </h1>
+          </View>
         </div>
-      </div>
-      <div className="work relative w-full  h-full p-5 flex flex-col gap-12  custom-cursor-ignore">
-        {Array.from({ length: Math.ceil(workData.length / 2) }).map((_, i) => {
-          const startIndex = i * 2;
-          const rowItems = workData.slice(startIndex, startIndex + 2);
-          return (
-            <div
-              key={i}
-              style={{ cursor: "none" }}
-              className="row flex flex-col lg:flex-row gap-4 flex-1 w-full "
-            >
-              {rowItems.map((item) => (
-                <Link href={item.href} key={item.id}>
-                  <div className="flex flex-1 flex-col gap-0.5 work-item underline-animate">
-                    <Image
-                      src={item.image}
-                      alt={item.title ?? ""}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover aspect-[5/3] rounded-xl overflow-hidden"
-                    />
+        <div
+          id="custom-cursor"
+          className="pointer-events-none fixed top-0 left-0 z-50 opacity-0 transition-opacity duration-200"
+        >
+          <div className="bg-Card3 size-10 rounded-full relative px-3 py-2 hidden lg:block">
+            <CornerDownRight className="text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+          </div>
+        </div>
+        <div className="work relative w-full  h-full p-5 flex flex-col gap-12  custom-cursor-ignore">
+          {Array.from({ length: Math.ceil(workData.length / 2) }).map(
+            (_, i) => {
+              const startIndex = i * 2;
+              const rowItems = workData.slice(startIndex, startIndex + 2);
+              return (
+                <div
+                  key={i}
+                  style={{ cursor: "none" }}
+                  className="row flex flex-col lg:flex-row gap-4 flex-1 w-full "
+                >
+                  {rowItems.map((item) => (
+                    <Link href={item.href} key={item.id}>
+                      <div className="flex flex-1 flex-col gap-0.5 work-item underline-animate">
+                        <Image
+                          src={item.image}
+                          alt={item.title ?? ""}
+                          width={800}
+                          height={600}
+                          className="w-full h-auto object-cover aspect-[5/3] rounded-xl overflow-hidden"
+                        />
 
-                    <h2 className="  w-fit text-[1.2rem] font-Sora text-Bg2 relative inline-block ">
-                      {item.title} | {item.subtitle}
-                      <span className="underline absolute left-0 bottom-0 w-0 h-[1px] bg-black pointer-none: transition-none"></span>
-                    </h2>
+                        <h2 className="  w-fit text-[1.2rem] font-Sora text-Bg2 relative inline-block ">
+                          {item.title} | {item.subtitle}
+                          <span className="underline absolute left-0 bottom-0 w-0 h-[1px] bg-black pointer-none: transition-none"></span>
+                        </h2>
 
-                    <h3 className="text-[1rem] font-Lato text-Bg2 ">
-                      {item.type} - <span>{item.button}</span>
-                    </h3>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          );
-        })}
-      </div>
-      <div className="w-full flex justify-center mt-5">
-        <Button title="See More Projects" />
-      </div>
-    </section>
+                        <h3 className="text-[1rem] font-Lato text-Bg2 ">
+                          {item.type} - <span>{item.button}</span>
+                        </h3>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              );
+            }
+          )}
+        </div>
+        <div className="w-full flex justify-center mt-5">
+          <Button title="See More Projects" />
+        </div>
+      </section>
+    </React.Fragment>
   );
 }

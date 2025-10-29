@@ -91,7 +91,10 @@ p {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
-
+.menu-overlay {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  will-change: clip-path;
+}
 /* #hero-card1,
 #hero-card2,
 #hero-card {
